@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.3.css" />
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.19.3.js"></script>
+  <script>
+    class GraphNode {
+      constructor(label) {
+        this.label = label;
+        this.neighbors = new Set();
+        this.color = null;
+      }
+    }
+
+    const a = new GraphNode("a");
+    const b = new GraphNode("b");
+    const c = new GraphNode("c");
+
+    a.neighbors.add(b);
+    b.neighbors.add(a);
+    c.neighbors.add(b);
+    b.neighbors.add(c);
+
+    const graph = [a, b, c];
+  </script>
+</body>

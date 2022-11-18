@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.3.css" />
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.19.3.js"></script>
+  <script>
+    function add(a, b) {
+      return a + b;
+    }
+    function reverseWords(message) {
+      return message.join("");
+    }
+    const message = [
+      "c",
+      "a",
+      "k",
+      "e",
+      " ",
+      "p",
+      "o",
+      "u",
+      "n",
+      "d",
+      " ",
+      "s",
+      "t",
+      "e",
+      "a",
+      "l",
+    ];
+
+    QUnit.module("add", function () {
+      QUnit.test("two numbers", function (assert) {
+        assert.equal(add(1, 2), 3);
+      });
+    });
+    QUnit.module("Reverse Words", function () {
+      QUnit.test("Three Parts", function (assert) {
+        assert.equal(reverseWords(message), "steal pound cake");
+      });
+    });
+  </script>
+</body>
